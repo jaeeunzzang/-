@@ -35,14 +35,19 @@ int main()
   
   printf("합계를 출력합니다.\n");
   
-  for(i=0;i<20;i++)
+  for(j=0;j<19;j++)
   {
-    for(j=0;j<19;j++)
+    for(i=0;i<20;i++)
     {
-      sum= sum+a[i][j][0]+a[i][j][1]+a[i][j][2];
+      a[20][j][0] += a[i][0][2];
+      
     }
   }
-  printf("합계 : %d\n",sum);
+  for(j=0;j<19;j++)
+  {
+    a[20][0][0]+=a[20][j+1][0];
+  }
+  printf("합계 : %d\n",a[20][0][0]);
   return 0;
 }
       
