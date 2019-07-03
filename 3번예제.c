@@ -6,9 +6,10 @@ typedef struct node
 {
   char name[20];
   struct node *link;
-}NODE;
+}NODE; //구조체 선언
 
-int main()
+
+int main(void)
 {
   char buffer[20];
   NODE *p,*h,*mid,*temp; //mid=temp
@@ -90,6 +91,7 @@ int main()
                       }
                    printf("null\n");
                    break;
+         
           
            case 2:
                    printf("이름을 입력하세요 : ");
@@ -186,9 +188,9 @@ int main()
                     }
                   }
                   p=h;
-                  while(p!=NULL)
+                  while(p != NULL)
                   {
-                    printf("%10s->",p->name);
+                    printf("%10s ->",p->name);
                     p=p->link;
                   }
                   printf("null\n");
@@ -200,6 +202,7 @@ int main()
                    }
                  printf("null\n");
                  break;
+             
            case 4:
              printf("삭제하기 위해 입력한 사람의 뒤에 있는 정보를 입력하세요:");
              gets(buffer);
@@ -215,7 +218,7 @@ int main()
                puts("일치하는 사람이 없습니다.");
              else
              {
-               if(p->link==NULL)
+               if(p->link == NULL)
                 puts("입력하신 정보 뒤에는 삭제할 정보가 없습니다.");
                else
                {
