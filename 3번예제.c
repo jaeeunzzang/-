@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#incluse <stdlib.h>
+#include <stdlib.h>
 
 typedef struct node
 {
@@ -20,7 +20,7 @@ int main()
   환상형 연결리스트 테스트변수 test
   */
   
-  h=null;
+  h=NULL;
   do
   {
     while(1)
@@ -44,14 +44,15 @@ int main()
               m++;
               break;
              }
+    }
       
          switch(c)
               {
-                  case 1;
+           case 1:
                   while(cnt !=4)
                      {
                           p=(NODE *)malloc(sizeof(NODE));
-                          if(p==null)
+                          if(p == NULL)
                               {
                                  puts("메모리 할당 오류");
                                  exit(1);
@@ -61,28 +62,28 @@ int main()
                            gets(buffer);
                            strcpy(p -> name, buffer);
             
-                          if(h==null)
+                          if(h==NULL)
                             {
                               h=p;
                               mid=p;
                             }
                           else
                            {
-                              mid -> link=p;
+                              mid -> link = p;
                               mid=p;
                            }
-                           p -> link=null;
+                           p -> link=NULL;
                       }
                    printf("\n물리적 저장 구조를 알아보기 위한 주소 출력\n");
                    p=h;
-                  while(p!=null)
+                  while(p!=NULL)
                      {
                        printf("%10s ->",p->name);
                        p=p->link;
                       }
                    printf("null\n");
                    p=h;
-                   while(p!=null)
+                   while(p!=NULL)
                      {
                         printf("%10d ->",p);
                         p= p -> link;
@@ -90,19 +91,19 @@ int main()
                    printf("null\n");
                    break;
           
-              case 2;
+           case 2:
                    printf("이름을 입력하세요 : ");
                    gets(buffer);
           
                    p=h;
-                  while(p!=null)
+                  while(p!=NULL)
                     {
                       if(strcmp(p -> name,buffer)==0)
                       break;
                       else
                       p=p->link;
                      }
-                   if(p==null)
+                   if(p==NULL)
                    puts("일치하는 사람이 없습니다.");
                   else
                    {
@@ -111,7 +112,7 @@ int main()
                            h=p->link;
                            free(p);
                          }
-                      else if(p->link==null)
+                      else if(p->link==NULL)
                          {
                            mid=p;
                            p=h;
@@ -119,7 +120,7 @@ int main()
                              {
                                  p=p->link;
                               }
-                           p->link=null;
+                           p->link=NULL;
                            free(mid);
                           }
                         else
@@ -136,23 +137,23 @@ int main()
                     }
                     printf("\n삭제 이후의 연결리스트 모습\n");
                     p=h;
-                    while(p!=null)
+                    while(p!=NULL)
                     {
                       printf("%10s ->",p->name);
                       p=p->link;
                     }
                     printf("null\n");
                     p=h;
-                    while(p!=null)
+                    while(p!=NULL)
                     {
                       printf("%10d->",p);
                       p=p->link;
                     }
                     printf("null\n");
                     break;
-             case 3;
-                temp=(NODE*)malloc(sizeof(NODE));
-                if(temp==null)
+           case 3:
+                temp = (NODE *)malloc(sizeof(NODE));
+                if(temp==NULL)
                 {
                   puts("메모리 할당 오류");
                   exit(1);
@@ -162,21 +163,21 @@ int main()
                 printf("누구의 뒤에 삽입 하겠습니까? :");
                 gets(buffer);
                 p=h;
-                while(p!=null)
+                while(p!=NULL)
                 {
-                  if(strcmp(p->name,buffer)==0)
+                  if(strcmp(p -> name, buffer)==0)
                     break;
                   else
                     p=p->link;
                 }
-                  if(p==null)
+                  if(p==NULL)
                   puts("일치하는 사람이 없습니다.");
                   else
                   {
-                    if(p->link==null)
+                    if(p->link==NULL)
                     {
                       p->link=temp;
-                      temp->link=null;
+                      temp->link=NULL;
                     }
                     else
                     {
@@ -185,43 +186,43 @@ int main()
                     }
                   }
                   p=h;
-                  while(p!=null)
+                  while(p!=NULL)
                   {
                     printf("%10s->",p->name);
                     p=p->link;
                   }
                   printf("null\n");
                   p=h;
-                 while(p!=null)
+                 while(p!=NULL)
                    {
                       printf("%10d ->",p);
                       p=p->link;
                    }
                  printf("null\n");
                  break;
-             case 4;
+           case 4:
              printf("삭제하기 위해 입력한 사람의 뒤에 있는 정보를 입력하세요:");
              gets(buffer);
              p=h;
-             while(p!=null)
+             while(p!=NULL)
              {
                if(strcmp(buffer,p->name)==0)
                  break;
                else
                  p=p->link;
              }
-             if(p==null)
+             if(p==NULL)
                puts("일치하는 사람이 없습니다.");
              else
              {
-               if(p->link==null)
+               if(p->link==NULL)
                 puts("입력하신 정보 뒤에는 삭제할 정보가 없습니다.");
                else
                {
                  mid=p->link;
-                 if(mid->link==null)
+                 if(mid->link==NULL)
                  {
-                   p->link=null;
+                   p->link=NULL;
                    free(mid);
                  }
                  else
@@ -232,14 +233,14 @@ int main()
                }
              }
              p=h;
-             while(p!=null)
+             while(p!=NULL)
              {
                printf("%10s ->",p->name);
                p=p->link;
              }
              printf("null\n");
              p=h;
-             while(p!=null)
+             while(p!=NULL)
              {
                printf("%10d ->",p);
                p=p->link;
@@ -247,9 +248,9 @@ int main()
              printf("null\n");
              break;
              
-             case 5;
+           case 5:
              p=h;
-             while(p->link!=null)
+             while(p->link!=NULL)
              {
                p=p->link;
              }
@@ -273,7 +274,7 @@ int main()
              printf("\n무한반복\n");
              break;
              
-             case 6;
+           case 6:
              printf("종료합니다.");
              break;
              
@@ -281,20 +282,6 @@ int main()
              printf("실행됨\n");
              break;
          }
-    }
-    while(c!=6);
+    } while(c!=6)
     return 0;
   }
-             
-             
-             
-                             
-             
-              
-          
-                   
-         
-            
-      
-
-
