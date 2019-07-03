@@ -164,7 +164,129 @@ int main()
                 p=h;
                 while(p!=null)
                 {
-                  
+                  if(strcmp(p->name,buffer)==0)
+                    break;
+                  else
+                    p=p->link;
+                }
+                  if(p==null)
+                  puts("일치하는 사람이 없습니다.");
+                  else
+                  {
+                    if(p->link==null)
+                    {
+                      p->link=temp;
+                      temp->link=null;
+                    }
+                    else
+                    {
+                      temp->link=p->link;
+                      p->link=temp;
+                    }
+                  }
+                  p=h;
+                  while(p!=null)
+                  {
+                    printf("%10s->",p->name);
+                    p=p->link;
+                  }
+                  printf("null\n");
+                  p=h;
+                 while(p!=null)
+                   {
+                      printf("%10d ->",p);
+                      p=p->link;
+                   }
+                 printf("null\n");
+                 break;
+             case 4;
+             printf("삭제하기 위해 입력한 사람의 뒤에 있는 정보를 입력하세요:");
+             gets(buffer);
+             p=h;
+             while(p!=null)
+             {
+               if(strcmp(buffer,p->name)==0)
+                 break;
+               else
+                 p=p->link;
+             }
+             if(p==null)
+               puts("일치하는 사람이 없습니다.");
+             else
+             {
+               if(p->link==null)
+                puts("입력하신 정보 뒤에는 삭제할 정보가 없습니다.");
+               else
+               {
+                 mid=p->link;
+                 if(mid->link==null)
+                 {
+                   p->link=null;
+                   free(mid);
+                 }
+                 else
+                 {
+                   p->link=mid->link;
+                   free(mid);
+                 }
+               }
+             }
+             p=h;
+             while(p!=null)
+             {
+               printf("%10s ->",p->name);
+               p=p->link;
+             }
+             printf("null\n");
+             p=h;
+             while(p!=null)
+             {
+               printf("%10d ->",p);
+               p=p->link;
+             }
+             printf("null\n");
+             break;
+             
+             case 5;
+             p=h;
+             while(p->link!=null)
+             {
+               p=p->link;
+             }
+             p->link=h;
+             p=h;
+             while(test<6)
+             {
+               printf("%10s->",p->name);
+               p=p->link;
+               test++;
+             }
+             printf("\n무한반복\n");
+             p=h;
+             test=0;
+             while(test<6)
+             {
+               printf("%10d ->",p);
+               p=p->link;
+               test++;
+             }
+             printf("\n무한반복\n");
+             break;
+             
+             case 6;
+             printf("종료합니다.");
+             break;
+             
+           default:
+             printf("실행됨\n");
+             break;
+         }
+    }
+    while(c!=6);
+    return 0;
+  }
+             
+             
              
                              
              
