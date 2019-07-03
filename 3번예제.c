@@ -86,6 +86,10 @@ int main()
             printf("%10d ->",p);
             p= p -> link;
           }
+          printf("null\n");
+          break;
+          
+          case 2;
           
                    
          
