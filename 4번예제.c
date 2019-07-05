@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-type def double num;
-type def struct _stack
+typedef double num;
+typedef struct _stack
 {
   num data;
   struct stack *link;
